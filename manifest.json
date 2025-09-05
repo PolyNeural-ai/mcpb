@@ -1,0 +1,157 @@
+{
+  "dxt_version": "0.1",
+  "name": "@polyneural/mcpb",
+  "display_name": "PolyNeural.ai Knowledge Graph MCP Bundle",
+  "version": "0.0.1-alpha",
+  "description": "AI Memory Platform with persistent knowledge graph storage via MCP Bundle",
+  "long_description": "PolyNeural.ai provides a scalable AI Memory Platform that enables persistent knowledge graph storage across devices and sessions. This MCP Bundle allows AI agents to maintain long-term memory through a multi-tenant knowledge graph system with full-text search, real-time updates, and comprehensive relationship management. Perfect for storing technical insights, user preferences, solution patterns, and project context that persist across conversations.",
+  "author": {
+    "name": "PolyNeural.ai",
+    "email": "support@polyneural.ai",
+    "url": "https://polyneural.ai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PolyNeural-ai/mcpb"
+  },
+  "homepage": "https://polyneural.ai",
+  "documentation": "https://docs.polyneural.ai",
+  "support": "https://github.com/PolyNeural-ai/mcpb/issues",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ],
+      "env": {
+        "API_URL": "${user_config.api_url}",
+        "API_KEY": "${user_config.api_key}",
+        "DEBUG": "${user_config.debug_mode}",
+        "TIMEOUT": "${user_config.timeout}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "create_entities",
+      "description": "Create entities in the knowledge graph for AI memory storage with semantic types"
+    },
+    {
+      "name": "create_relations", 
+      "description": "Create typed relationships between entities in the knowledge graph"
+    },
+    {
+      "name": "search_nodes",
+      "description": "Search for nodes in the knowledge graph using full-text search"
+    },
+    {
+      "name": "open_nodes",
+      "description": "Retrieve specific entities by their names or IDs"
+    },
+    {
+      "name": "read_graph",
+      "description": "Read the complete knowledge graph structure"
+    },
+    {
+      "name": "add_observations",
+      "description": "Add new observations to existing entities"
+    },
+    {
+      "name": "delete_entities",
+      "description": "Delete entities and their associated relationships"
+    },
+    {
+      "name": "delete_relations",
+      "description": "Delete specific relationships between entities"
+    },
+    {
+      "name": "delete_observations",
+      "description": "Delete specific observations from entities"
+    },
+    {
+      "name": "get_entities_by_identifiers",
+      "description": "Get entities by their names or IDs"
+    },
+    {
+      "name": "get_entity_relationships",
+      "description": "Get all incoming and outgoing relationships for an entity"
+    },
+    {
+      "name": "get_entities_by_date_range",
+      "description": "Get entities created or updated within a specific date range"
+    },
+    {
+      "name": "get_recent_changes",
+      "description": "Get recent changes to the knowledge graph within specified hours"
+    },
+    {
+      "name": "get_trending_entities",
+      "description": "Get entities with highest access frequency or recent activity"
+    },
+    {
+      "name": "get_frecency_entities",
+      "description": "Get entities ranked by frecency score (frequency + recency)"
+    },
+    {
+      "name": "search_with_frecency",
+      "description": "Search entities with frecency-based ranking"
+    },
+    {
+      "name": "get_orphaned_entities",
+      "description": "Get entities that have no relationships (isolated nodes)"
+    }
+  ],
+  "keywords": [
+    "ai",
+    "memory",
+    "knowledge-graph",
+    "mcp",
+    "persistence",
+    "insights",
+    "relationships",
+    "search",
+    "polyneural"
+  ],
+  "license": "MIT",
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": {
+      "node": ">=16.0.0"
+    }
+  },
+  "user_config": {
+    "api_url": {
+      "type": "string",
+      "title": "API URL",
+      "description": "PolyNeural.ai API endpoint URL",
+      "default": "https://polyneural.ai",
+      "required": true
+    },
+    "api_key": {
+      "type": "string", 
+      "title": "API Key",
+      "description": "Your PolyNeural.ai API key for authentication (format: kg_xxxxxxxx)",
+      "sensitive": true,
+      "required": true
+    },
+    "debug_mode": {
+      "type": "boolean",
+      "title": "Debug Mode",
+      "description": "Enable detailed logging for troubleshooting",
+      "default": false,
+      "required": false
+    },
+    "timeout": {
+      "type": "number",
+      "title": "Request Timeout (seconds)",
+      "description": "Maximum time to wait for API requests",
+      "default": 30,
+      "min": 5,
+      "max": 120,
+      "required": false
+    }
+  }
+}

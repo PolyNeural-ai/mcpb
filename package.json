@@ -1,0 +1,43 @@
+{
+  "name": "@polyneural/mcpb",
+  "version": "1.0.0",
+  "description": "MCP Bundle for the PolyNeural.ai AI Memory Platform",
+  "type": "module",
+  "main": "server/index.js",
+  "author": {
+    "name": "PolyNeural.ai",
+    "email": "support@polyneural.ai",
+    "url": "https://PolyNeural.ai"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PolyNeural-ai/mcpb.git"
+  },
+  "keywords": [
+    "ai",
+    "memory",
+    "knowledge-graph",
+    "mcp",
+    "mcpb",
+    "claude",
+    "bundle"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "supergateway": "^3.4.0",
+    "ws": "^8.18.3",
+    "zod": "^3.23.0"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test",
+    "validate": "node validate-mcpb.js",
+    "bundle": "./create-bundle.sh",
+    "build": "echo 'No build step required for Node.js MCP Bundle'",
+    "lint": "echo 'Linting skipped for MCPB bundle'"
+  }
+}
