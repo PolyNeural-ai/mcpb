@@ -13,7 +13,7 @@ This MCP Bundle implements a **stdio MCP server** that bridges to the PolyNeural
 
 ## Prerequisites
 
-1. **PolyNeural.ai Backend Running**: The backend must be accessible (default: `http://localhost:8787`)
+1. **PolyNeural.ai Backend Running**: The backend must be accessible (default: `https://polyneural.ai`)
 2. **Valid API Key**: You need a PolyNeural.ai API key (format: `kg_xxxxxxxx`)
 3. **Node.js 16+**: Required for running the extension
 
@@ -42,7 +42,7 @@ npm install
       "command": "node",
       "args": ["/path/to/mcpb/server/index.js"],
       "env": {
-        "API_URL": "http://localhost:8787",
+        "API_URL": "https://polyneural.ai",
         "API_KEY": "kg_your_api_key_here",
         "DEBUG": "false",
         "TIMEOUT": "30"
@@ -58,7 +58,7 @@ The MCPB bundle supports these user configuration options (set via MCPB client U
 
 | Variable | Description | Default | Required |
 |----------|-------------|---------|----------|
-| `API_URL` | PolyNeural.ai backend URL | `http://localhost:8787` | No |
+| `API_URL` | PolyNeural.ai backend URL | `https://polyneural.ai` | No |
 | `API_KEY` | Your PolyNeural.ai API key | - | **Yes** |
 | `DEBUG` | Enable debug logging | `false` | No |
 | `TIMEOUT` | Request timeout in seconds | `30` | No |
@@ -92,7 +92,7 @@ Once installed, Claude will have access to these PolyNeural.ai knowledge graph t
 ### Manual Testing
 ```bash
 # Set environment variables and run
-API_URL=http://localhost:8787 API_KEY=kg_your_key DEBUG=true npm start
+API_URL=https://polyneural.ai API_KEY=kg_your_key DEBUG=true npm start
 ```
 
 ### Create MCPB Bundle
@@ -115,7 +115,7 @@ node test-integration.js
 ### Common Issues
 
 **Bundle won't start:**
-- Verify the PolyNeural.ai backend is running: `curl http://localhost:8787/health`
+- Verify the PolyNeural.ai backend is running: `curl https://polyneural.ai/health`
 - Check your API key format (must start with `kg_`)
 - Enable debug mode in the bundle configuration
 
@@ -127,7 +127,7 @@ node test-integration.js
 **Connection timeouts:**
 - Increase the `TIMEOUT` value
 - Check network connectivity to the backend
-- Verify the backend MCP endpoints are accessible: `curl -H "Authorization: Bearer kg_your_key" http://localhost:8787/mcp/initialize`
+- Verify the backend MCP endpoints are accessible: `curl -H "Authorization: Bearer kg_your_key" https://polyneural.ai/mcp/initialize`
 
 ### Debug Mode
 

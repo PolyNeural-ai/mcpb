@@ -28,7 +28,7 @@
          "command": "node",
          "args": ["/path/to/mcpb/server/index.js"],
          "env": {
-           "API_URL": "https://api.polyneural.ai",
+           "API_URL": "https://polyneural.ai",
            "API_KEY": "kg_your_api_key_here",
            "DEBUG": "false",
            "TIMEOUT": "30"
@@ -44,7 +44,7 @@
 - **API_KEY**: Your PolyNeural.ai API key (format: `kg_xxxxxxxx`)
 
 ### Optional Settings
-- **API_URL**: API endpoint (default: `https://api.polyneural.ai`)
+- **API_URL**: API endpoint (default: `https://polyneural.ai`)
 - **DEBUG**: Enable debug logging (default: `false`)
 - **TIMEOUT**: Request timeout in seconds (default: `30`)
 
@@ -54,7 +54,7 @@
 This usually means:
 1. **Missing API Key**: Ensure your PolyNeural.ai API key is set
 2. **Invalid Format**: API key must start with `kg_`
-3. **Network Issues**: Check connection to `api.polyneural.ai`
+3. **Network Issues**: Check connection to `polyneural.ai`
 
 ### "No tools available"
 1. **Restart** your MCP client after installation
