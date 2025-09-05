@@ -2,6 +2,12 @@
 
 An MCP Bundle that provides AI agents with persistent memory through the PolyNeural.ai knowledge graph platform.
 
+## 🚀 Quick Download
+
+**[Download Latest Release →](https://github.com/PolyNeural-ai/mcpb/releases/latest/download/polyneural-mcpb.mcpb)**
+
+Double-click the `.mcpb` file to install in Claude Desktop, then configure your PolyNeural.ai API key.
+
 ## Architecture
 
 This MCP Bundle implements a **stdio MCP server** that bridges to the PolyNeural.ai backend HTTP MCP endpoints. This approach provides:
@@ -21,7 +27,7 @@ This MCP Bundle implements a **stdio MCP server** that bridges to the PolyNeural
 
 ### Option 1: As MCPB Bundle (Recommended)
 
-1. Download the latest `polyneural-mcpb.mcpb` file from the releases page
+1. Download the latest `polyneural-mcpb.mcpb` file from the [releases page](https://github.com/PolyNeural-ai/mcpb/releases)
 2. Install using your MCPB-compatible application:
    - **Claude Desktop**: Double-click the `.mcpb` file to install
    - **Other MCPB clients**: Follow your client's installation process
